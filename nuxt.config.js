@@ -19,7 +19,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,700&display=swap&subset=japanese'}
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,700&display=swap&subset=japanese'},
+      { rel: 'stylesheet', href: 'https://unpkg.com/ress/dist/ress.min.css'}
+    ],
+    script: [
+      { src: 'https://kit.fontawesome.com/031620f726.js'},
     ]
   },
   /*
@@ -45,6 +49,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-svg-loader',
+    'bootstrap-vue/nuxt',
   ],
   /*
   ** Build configuration
@@ -55,5 +61,5 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
 }
