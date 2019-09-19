@@ -1,15 +1,14 @@
 <template>
-  <div class="index">
+  <div class="index animated fadeIn delay-1s">
     <myHeader />
     <div id="main">
       <b-container>
         <div id="quote">
-          <div id="quote_p">
+          <div id="quote_p" class="animated fadeInUp delay-2s">
             <p>Webを作る。</p>
             <p>世界を創る。</p>
-            <p id="description">Junya Oiwa's Portfolio</p>
+            <p id="description" class="animated fadeInUp delay-3s">Junya Oiwa's Portfolio</p>
           </div>
-          
         </div>
       </b-container>
     </div>
@@ -19,9 +18,20 @@
 <script>
 import myHeader from '@/components/myheader.vue'
 
+
 export default {
+  data() {
+    return {
+    }
+  },
   components: {
-    myHeader
+    myHeader,
+  },
+  methods: {
+
+  },
+  mounted() {
+
   }
 }
 </script>
@@ -46,7 +56,6 @@ export default {
   background-image: url('/img/cover.jpg');
   background-size: cover;
   background-position: center;
-  /* background-position-y: -133px; */
 }
 
 #quote_p{

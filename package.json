@@ -11,6 +11,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.6.0",
+    "animate.css": "^3.7.2",
     "bootstrap-vue": "^2.0.1",
     "nuxt": "^2.0.0",
     "nuxt-svg-loader": "^1.0.1"

@@ -32,7 +32,7 @@ export default {
 }
 
 #header_logo {
-    width: 35%;
+    width: 30%;
     margin-bottom: 30px;
 }
 </style>
