@@ -52,7 +52,8 @@ export default {
   modules: [
     'nuxt-svg-loader',
     'bootstrap-vue/nuxt',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['@nuxtjs/moment', ['ja']]
   ],
   /*
   ** Build configuration

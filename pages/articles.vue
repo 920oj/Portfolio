@@ -1,10 +1,23 @@
 <template>
   <div class="articles">
     <myHeader />
-    <div id="main">
+    <div id="art">
       <b-container>
-        <div v-for="(items) in hatenaArticles" :key="items.id">
-          <p>{{items.title}}</p>
+        <div v-for="item in allArticles" :key="item.id">
+          <a :href="item.link">
+            <b-card>
+              <b-media no-body>
+                <b-media-aside>
+                  <hatenaLogo style="width: 50px;" v-if="item.site === `hatena`" />
+                  <img src="@/assets/img/png/qiita-square.png" style="width: 50px;" v-if="item.site === `qiita`">
+                </b-media-aside>
+                <b-media-body class="ml-3">
+                  <h5 class="mt-0">{{item.title}}</h5>
+                  <p>{{item.date}}</p>
+                </b-media-body>
+              </b-media>
+            </b-card>
+          </a>
         </div>
       </b-container>
     </div>
@@ -13,43 +26,76 @@
 
 <script>
 import myHeader from '@/components/myheader.vue'
+import hatenaLogo from '@/assets/img/svg/hatena.svg'
 
 export default {
   components: {
-    myHeader
+    myHeader,
+    hatenaLogo
   },
   data() {
     return {
       hatenaArticles: null,
       qiitaArticles: null,
+      allArticles: []
     }
   },
   mounted() {
-    this.getHatena();
+    const self = this;
+    Promise.all([this.getHatena(),this.getQiita()])
+    .then(function(){
+      self.hatenaArticles.forEach(function(item){
+        let tmp = {};
+        tmp.site = "hatena";
+        tmp.title = item.title;
+        tmp.date = self.$moment(item.pubDate).format('YYYY/MM/DD hh:mm:ss');
+        tmp.link = item.link;
+
+        self.allArticles.push(tmp);
+      })
+
+      self.qiitaArticles.forEach(function(item){
+        let tmp = {};
+        tmp.site = "qiita";
+        tmp.title = item.title;
+        tmp.date = self.$moment(item.created_at).format('YYYY/MM/DD hh:mm:ss');
+        tmp.link = item.url;
+
+        self.allArticles.push(tmp);
+      })
+
+      self.allArticles.sort(function(a,b){
+        return (a.date < b.date ? 1 : -1);
+      })
+    })
   },
   methods: {
     getHatena() {
       const self = this;
-      this.$axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2F920oj.hatenablog.com%2Frss')
-      .then(function(response){
-        console.log(response.data.items);
-        self.hatenaArticles = response.data.items;
-        self.getQiita();
-      })
-      .catch(function(error){
-        console.log(error);
-        self.getQiita();
+      return new Promise(function(resolve, reject) {
+        self.$axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2F920oj.hatenablog.com%2Frss')
+        .then(function(response){
+          console.log(response.data.items);
+          self.hatenaArticles = response.data.items;
+          resolve();
+        })
+        .catch(function(error){
+          console.log(error);
+        })
       })
     },
     getQiita() {
       const self = this;
-      this.$axios.get('https://qiita.com/api/v2/items?page=1&per_page=100&query=user%3A920oj')
-      .then(function(response){
-        console.log(response.data);
-        self.qiitaArticles = response.data;
-      })
-      .catch(function(error){
-        console.log(error);
+      return new Promise(function(resolve, reject){
+        self.$axios.get('https://qiita.com/api/v2/items?page=1&per_page=100&query=user%3A920oj')
+        .then(function(response){
+          console.log(response.data);
+          self.qiitaArticles = response.data;
+          resolve();
+        })
+        .catch(function(error){
+          console.log(error);
+        })
       })
     }
   }
@@ -57,5 +103,11 @@ export default {
 </script>
 
 <style>
+a {
+  text-decoration: none;
+}
 
+a:hover {
+  text-decoration: none;
+}
 </style>
