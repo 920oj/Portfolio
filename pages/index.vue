@@ -1,7 +1,7 @@
 <template>
-  <div class="index animated fadeIn delay-1s">
+  <div class="index">
     <myHeader />
-    <div id="main">
+    <div id="main" class="animated fadeIn delay-1s">
       <b-container>
         <div id="quote">
           <div id="quote_p" class="animated fadeInUp delay-2s">
