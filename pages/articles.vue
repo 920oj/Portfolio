@@ -1,10 +1,10 @@
 <template>
   <div class="articles">
     <myHeader />
-    <div id="art">
+    <div id="art" class="animated fadeIn" v-if="loaded" style="margin-bottom: 30px;">
       <b-container>
         <div v-for="item in allArticles" :key="item.id">
-          <a :href="item.link">
+          <a :href="item.link" target="_blank">
             <b-card>
               <b-media no-body>
                 <b-media-aside>
@@ -31,10 +31,11 @@ import hatenaLogo from '@/assets/img/svg/hatena.svg'
 export default {
   components: {
     myHeader,
-    hatenaLogo
+    hatenaLogo,
   },
   data() {
     return {
+      loaded: false,
       hatenaArticles: null,
       qiitaArticles: null,
       allArticles: []
@@ -68,12 +69,15 @@ export default {
         return (a.date < b.date ? 1 : -1);
       })
     })
+    .then(function(){
+      self.loaded = true;
+    })
   },
   methods: {
     getHatena() {
       const self = this;
       return new Promise(function(resolve, reject) {
-        self.$axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2F920oj.hatenablog.com%2Frss')
+        self.$axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2F920oj.hatenablog.com%2Frss&api_key=ynvt3q8neusmelwzz2vvfxuxxbo6ygcpnv9jukru&count=100')
         .then(function(response){
           console.log(response.data.items);
           self.hatenaArticles = response.data.items;

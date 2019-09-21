@@ -17,7 +17,8 @@
     "bootstrap-vue": "^2.0.1",
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
-    "nuxt-svg-loader": "^1.0.1"
+    "nuxt-svg-loader": "^1.0.1",
+    "vee-validate": "^3.0.6"
   },
   "devDependencies": {}
 }
