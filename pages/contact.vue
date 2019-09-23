@@ -30,7 +30,7 @@
           </div>
         </form>
         <iframe name="none" frameborder="0" style="display: none;"></iframe>
-        <div v-if="isSubmitted" class="animated fadeIn">
+        <div v-if="isSubmitted" class="animated fadeIn" style="margin-top: 30px;">
           <p>お問い合わせありがとうございました。確認次第、メールアドレス宛にご返信させていただきます。</p>
           <p>一週間経っても返信がない場合、もう一度お問い合わせをご送信いただくか、<a href="https://twitter.com/920oj" target="_blank">Twitter</a>までご連絡ください。</p>
         </div>
