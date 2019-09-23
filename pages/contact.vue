@@ -100,8 +100,12 @@ export default {
 </script>
 
 <style>
+.con {
+  font-family: 'Noto Sans JP', sans-serif;
+}
 .field {
   margin: 30px 0;
+  font-weight: 700;
 }
 
 .field_error {

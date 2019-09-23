@@ -13,7 +13,7 @@
                 </b-media-aside>
                 <b-media-body class="ml-3">
                   <h5 class="mt-0">{{item.title}}</h5>
-                  <p>{{item.date}}</p>
+                  <p class="item_date">{{item.date}}</p>
                 </b-media-body>
               </b-media>
             </b-card>
@@ -113,5 +113,14 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+#art {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.item_date {
+  color: #777;
+  font-size: 0.8em;
 }
 </style>
