@@ -38,6 +38,20 @@
       
       <section class="skills">
         <h3 class="section_title">Skills</h3>
+        <b-row>
+          <b-col xl="3">
+            <skill svg="/img/icon/html5.svg" title="HTML5" rank="3" description="2015.4～" />
+          </b-col>
+          <b-col lg="3">
+            <skill svg="/img/icon/css3.svg" title="CSS3" rank="3" description="2015.4～" />
+          </b-col>
+          <b-col lg="3">
+            <skill svg="/img/icon/javascript.svg" title="JavaScript" rank="2" description="2018.4～" />
+          </b-col>
+          <b-col lg="3">
+            <skill svg="/img/icon/javascript.svg" title="JavaScript" rank="2" description="2018.4～" />
+          </b-col>
+        </b-row>
       </section>
 
     </b-container>
@@ -46,10 +60,12 @@
 
 <script>
 import myHeader from '@/components/myheader.vue'
+import skill from '@/components/skill.vue'
 
 export default {
   components: {
-    myHeader
+    myHeader,
+    skill
   },
   data() {
     return {
