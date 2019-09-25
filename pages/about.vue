@@ -39,18 +39,21 @@
       <section class="skills">
         <h3 class="section_title">Skills</h3>
         <b-row>
-          <b-col xl="3">
+          <b-col md="3" cols="6" v-for="(item, id) in skill_data" :key="id">
+            <skill :svg="item.svg" :title="item.title" :rank="item.rank" :description="item.description" />
+          </b-col>
+          <!-- <b-col md="3" cols="6">
             <skill svg="/img/icon/html5.svg" title="HTML5" rank="3" description="2015.4～" />
           </b-col>
-          <b-col lg="3">
+          <b-col md="3" cols="6">
             <skill svg="/img/icon/css3.svg" title="CSS3" rank="3" description="2015.4～" />
           </b-col>
-          <b-col lg="3">
+          <b-col md="3" cols="6">
             <skill svg="/img/icon/javascript.svg" title="JavaScript" rank="2" description="2018.4～" />
           </b-col>
-          <b-col lg="3">
+          <b-col md="3" cols="6">
             <skill svg="/img/icon/javascript.svg" title="JavaScript" rank="2" description="2018.4～" />
-          </b-col>
+          </b-col> -->
         </b-row>
       </section>
 
@@ -75,6 +78,14 @@ export default {
         {'年月': '2018.4', '内容': '東京都市大学 メディア情報学部 社会メディア学科 入学'},
         {'年月': '2019.4', '内容': '学生プログラミング団体 Steg フロントエンド課 加入'},
       ],
+      skill_data: [
+        {svg: 'html5.svg', title: 'HTML5', rank: '3', description: '2015.4～'},
+        {svg: 'css3.svg', title: 'CSS3', rank: '3', description: '2015.4～'},
+        {svg: 'javascript.svg', title: 'JavaScript', rank: '2', description: '2018.4～'},
+        {svg: 'html5.svg', title: 'HTML5', rank: '3', description: '2015.4～'},
+        {svg: 'html5.svg', title: 'HTML5', rank: '3', description: '2015.4～'},
+
+      ]
     }
   }
 }
