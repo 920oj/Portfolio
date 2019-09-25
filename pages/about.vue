@@ -1,8 +1,8 @@
 <template>
   <div class="about">
     <myHeader />
-    <div class="abo">
-      <b-container>
+    <b-container>
+      <section class="abo">
         <b-row>
           <b-col md="3" class="flex">
             <img src="@/assets/img/jpg/oj-icon.jpg" alt="icon" id="icon">
@@ -24,8 +24,14 @@
             </div>
           </b-col>
         </b-row>
-      </b-container>
-    </div>
+      </section>
+      <section class="skills">
+        <h3 class="section_title">Skills</h3>
+      </section>
+      <section class="jobs">
+        <h3 class="section_title">Jobs</h3>
+      </section>
+    </b-container>
   </div>
 </template>
 
@@ -44,7 +50,10 @@ export default {
   width: 100%;
 }
 
-.abo {
+section {
+  margin-bottom: 30px;
+}
+.about {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -104,5 +113,10 @@ export default {
 
 #gh:hover {
   color: #22A6E0;
+}
+
+.section_title {
+  font-weight: 700;
+  text-align: center;
 }
 </style>
