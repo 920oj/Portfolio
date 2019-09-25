@@ -1,7 +1,10 @@
 <template>
   <div class="articles">
     <myHeader />
-    <div id="art" class="animated fadeIn" v-if="loaded" style="margin-bottom: 30px;">
+    <div id="load" v-if="isLoaded">
+      <b-spinner variant="primary" label="Spinning"></b-spinner>
+    </div>
+    <div id="art" class="animated fadeIn" v-if="!isLoaded" style="margin-bottom: 30px;">
       <b-container>
         <div v-for="item in allArticles" :key="item.id">
           <a :href="item.link" target="_blank">
@@ -35,7 +38,7 @@ export default {
   },
   data() {
     return {
-      loaded: false,
+      isLoaded: true,
       hatenaArticles: null,
       qiitaArticles: null,
       allArticles: []
@@ -70,7 +73,7 @@ export default {
       })
     })
     .then(function(){
-      self.loaded = true;
+      self.isLoaded = false;
     })
   },
   methods: {
@@ -115,6 +118,12 @@ a:hover {
   text-decoration: none;
 }
 
+#load {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  
+}
 #art {
   font-family: 'Noto Sans JP', sans-serif;
 }
