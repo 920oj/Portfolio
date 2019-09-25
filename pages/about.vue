@@ -37,24 +37,22 @@
       </section>
       
       <section class="skills">
-        <h3 class="section_title">Skills</h3>
-        <b-row>
-          <b-col md="3" cols="6" v-for="(item, id) in skill_data" :key="id">
-            <skill :svg="item.svg" :title="item.title" :rank="item.rank" :description="item.description" />
-          </b-col>
-          <!-- <b-col md="3" cols="6">
-            <skill svg="/img/icon/html5.svg" title="HTML5" rank="3" description="2015.4～" />
-          </b-col>
-          <b-col md="3" cols="6">
-            <skill svg="/img/icon/css3.svg" title="CSS3" rank="3" description="2015.4～" />
-          </b-col>
-          <b-col md="3" cols="6">
-            <skill svg="/img/icon/javascript.svg" title="JavaScript" rank="2" description="2018.4～" />
-          </b-col>
-          <b-col md="3" cols="6">
-            <skill svg="/img/icon/javascript.svg" title="JavaScript" rank="2" description="2018.4～" />
-          </b-col> -->
-        </b-row>
+        <div class="skill_separate">
+          <h3 class="section_title">Skills(Web)</h3>
+          <b-row>
+            <b-col md="3" cols="6" v-for="(item, id) in skill_web_data" :key="id">
+              <skill :svg="item.svg" :title="item.title" :rank="item.rank" :description="item.description" />
+            </b-col>
+          </b-row>
+        </div>
+        <div class="skill_separate">
+          <h3 class="section_title">Skills(Others)</h3>
+          <b-row>
+            <b-col md="3" cols="6" v-for="(item, id) in skill_others_data" :key="id">
+              <skill :svg="item.svg" :title="item.title" :rank="item.rank" :description="item.description" />
+            </b-col>
+          </b-row>
+        </div>
       </section>
 
     </b-container>
@@ -78,13 +76,23 @@ export default {
         {'年月': '2018.4', '内容': '東京都市大学 メディア情報学部 社会メディア学科 入学'},
         {'年月': '2019.4', '内容': '学生プログラミング団体 Steg フロントエンド課 加入'},
       ],
-      skill_data: [
-        {svg: 'html5.svg', title: 'HTML5', rank: '3', description: '2015.4～'},
-        {svg: 'css3.svg', title: 'CSS3', rank: '3', description: '2015.4～'},
-        {svg: 'javascript.svg', title: 'JavaScript', rank: '2', description: '2018.4～'},
-        {svg: 'html5.svg', title: 'HTML5', rank: '3', description: '2015.4～'},
-        {svg: 'html5.svg', title: 'HTML5', rank: '3', description: '2015.4～'},
-
+      skill_web_data: [
+        {svg: 'html5.svg', title: 'HTML5', rank: 3, description: '2015.4～'},
+        {svg: 'css3.svg', title: 'CSS3', rank: 3, description: '2015.4～'},
+        {svg: 'javascript.svg', title: 'JavaScript', rank: 2, description: '2018.4～'},
+        {svg: 'bootstrap.svg', title: 'Bootstrap', rank: 3, description: '2018.4～'},
+        {svg: 'vue.svg', title: 'Vue.js', rank: 2, description: '2019.8～'},
+        {svg: 'nuxt.svg', title: 'Nuxt.js', rank: 2, description: '2019.8～'},
+        {svg: 'firebase.svg', title: 'Firebase', rank: 1, description: '2019.9～'},
+        {svg: 'wordpress.svg', title: 'Wordpress', rank: 3, description: '2015.6～'},
+        {svg: 'aws.svg', title: 'AWS', rank: 1, description: '2018.11～'},
+        {svg: 'google-analytics.svg', title: 'Google Analytics', rank: 2, description: '2015.6～'}
+      ],
+      skill_others_data: [
+        {svg: 'python.svg', title: 'Python', rank: 2, description: '2018.8～'},
+        {svg: 'nodejs.svg', title: 'Node.js', rank: 1, description: '2018.8～'},
+        {svg: 'ubuntu.svg', title: 'Ubuntu Server', rank: 2, description: '2016.7～'},
+        {svg: 'nginx.svg', title: 'nginx', rank: 2, description: '2017.9～'}
       ]
     }
   }
@@ -151,7 +159,9 @@ section {
   padding: 10px;
 }
 
-
+.skill_separate {
+  margin-bottom: 30px;
+}
 
 .section_title {
   font-weight: 700;

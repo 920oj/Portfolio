@@ -1,6 +1,8 @@
 <template>
   <div class="skill_item">
-    <img :src="'/img/icon/' + svg" alt="" class="skill_logo">
+    <div class="img_box">
+      <img :src="'/img/icon/' + svg" alt="" class="skill_logo">
+    </div>
     <p class="skill_title">{{title}}</p>
     <p class="skill_rank" v-html="calcRank(rank)"></p>
     <p class="skill_description">{{description}}</p>
@@ -39,12 +41,27 @@ export default {
 <style>
 .skill_logo {
   /* height: 250px; */
+  height: 130px;
+}
+
+.img_box{
+  width: 150px;
   height: 150px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.skill_logo {
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
 }
 
 .skill_item {
+  margin-bottom: 30px;
   text-align: center;
-  margin: 30px 0;
 }
 
 .skill_item p {
