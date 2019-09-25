@@ -2,7 +2,8 @@
   <div class="about">
     <myHeader />
     <b-container>
-      <section class="abo">
+      <section class="aboutme">
+        <h3 class="section_title">About me</h3>
         <b-row>
           <b-col md="3" class="flex">
             <img src="@/assets/img/jpg/oj-icon.jpg" alt="icon" id="icon">
@@ -19,18 +20,26 @@
               <p>「とりあえず手を動かす」をモットーに、どんな現場にも対応できるエンジニアになるべく頑張っています。</p>
             </div>
             <div class="sns">
-              <a href="https://twitter.com/920oj" target="_blank"><i class="fab fa-twitter-square fa-fw" id="tw"></i></a>
-              <a href="https://github.com/920oj" target="_blank"><i class="fab fa-github-square fa-fw" id="gh"></i></a>
+              <a href="https://twitter.com/920oj" target="_blank"><i class="fab fa-twitter-square fa-fw sns_icon"></i></a>
+              <a href="https://github.com/920oj" target="_blank"><i class="fab fa-github-square fa-fw sns_icon"></i></a>
+              <i class="fas fa-envelope fa-fw sns_icon" v-b-modal.modal-1></i>
+              <b-modal id="modal-1" title="メールアドレス" ok-only ok-title="閉じる">
+                <p class="my-4">0920oiwa(atmark)gmail.com</p>
+              </b-modal>
             </div>
           </b-col>
         </b-row>
       </section>
+
+      <section class="career">
+        <h3 class="section_title">Career</h3>
+        <b-table striped hover :items="career_data" :fields="career_fields"></b-table>
+      </section>
+      
       <section class="skills">
         <h3 class="section_title">Skills</h3>
       </section>
-      <section class="jobs">
-        <h3 class="section_title">Jobs</h3>
-      </section>
+
     </b-container>
   </div>
 </template>
@@ -41,6 +50,16 @@ import myHeader from '@/components/myheader.vue'
 export default {
   components: {
     myHeader
+  },
+  data() {
+    return {
+      career_fields: ['年月', '内容'],
+      career_data: [
+        {'年月': '2015.4', '内容': '愛知県立半田高等学校 普通科 入学'},
+        {'年月': '2018.4', '内容': '東京都市大学 メディア情報学部 社会メディア学科 入学'},
+        {'年月': '2019.4', '内容': '学生プログラミング団体 Steg フロントエンド課 加入'},
+      ],
+    }
   }
 }
 </script>
@@ -51,7 +70,7 @@ export default {
 }
 
 section {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .about {
   font-family: 'Noto Sans JP', sans-serif;
@@ -88,35 +107,28 @@ section {
   color: #212529;
 }
 
-#tw {
+.sns_icon {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all  0.3s ease;
 }
 
-#tw:hover {
+.sns_icon:hover {
   color: #22A6E0;
 }
+
 
 #ov {
   border: solid 1px #DEE2E6;
   padding: 10px;
 }
 
-#gh {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all  0.3s ease;
-}
 
-#gh:hover {
-  color: #22A6E0;
-}
 
 .section_title {
   font-weight: 700;
   text-align: center;
+  margin-bottom: 30px;
 }
 </style>

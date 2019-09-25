@@ -3,7 +3,7 @@
     <myHeader />
     <div class="con animated fadeIn">
       <b-container>
-        <h2>お問い合わせ</h2>
+        <h2 id="contact_title">お問い合わせ</h2>
         <form v-if="!isSubmitted" name="contactForm" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdU_6pnmkvOTKFCGzhvH8ooZrub5SW_shrXMXJ4zfktjf6KyA/formResponse" method="POST" target="none">
           <div class="field">
             <p class="field_label">お名前</p>
@@ -100,6 +100,11 @@ export default {
 </script>
 
 <style>
+
+#contact_title {
+  font-weight: 700;
+  text-align: center;  
+}
 .con {
   font-family: 'Noto Sans JP', sans-serif;
 }
