@@ -1,61 +1,63 @@
 <template>
   <div class="about">
     <myHeader />
-    <b-container>
-      <section class="aboutme">
-        <h3 class="section_title">About me</h3>
-        <b-row>
-          <b-col md="3" class="flex">
-            <img src="@/assets/img/jpg/oj-icon.jpg" alt="icon" id="icon">
-          </b-col>
-          <b-col md="9" id="ov">
-            <div class="name">
-              <h2 style="margin-bottom: 0; font-weight: 700;">大岩 潤矢 (Junya Oiwa)</h2>
-              <p style="color: #777; font-weight: 700;">a.k.a. OJ(おーじぇい)</p>
-            </div>
-            <div class="description">
-              <p>1999/9/20生まれ。20歳。愛知県出身、現在横浜市在住。</p>
-              <p>東京都市大学 メディア情報学部 社会メディア学科 2年生。</p>
-              <p>大学入学と共にプログラミングを始め、JavascriptとPythonを中心に学習中。</p>
-              <p>「とりあえず手を動かす」をモットーに、どんな現場にも対応できるエンジニアになるべく頑張っています。</p>
-            </div>
-            <div class="sns">
-              <a href="https://twitter.com/920oj" target="_blank"><i class="fab fa-twitter-square fa-fw sns_icon"></i></a>
-              <a href="https://github.com/920oj" target="_blank"><i class="fab fa-github-square fa-fw sns_icon"></i></a>
-              <i class="fas fa-envelope fa-fw sns_icon" v-b-modal.modal-1></i>
-              <b-modal id="modal-1" title="メールアドレス" ok-only ok-title="閉じる">
-                <p class="my-4">0920oiwa(atmark)gmail.com</p>
-              </b-modal>
-            </div>
-          </b-col>
-        </b-row>
-      </section>
-
-      <section class="career">
-        <h3 class="section_title">Career</h3>
-        <b-table striped hover :items="career_data" :fields="career_fields"></b-table>
-      </section>
-      
-      <section class="skills">
-        <div class="skill_separate">
-          <h3 class="section_title">Skills(Web)</h3>
+    <div class="animated fadeIn">
+      <b-container>
+        <section class="aboutme">
+          <h3 class="section_title">About me</h3>
           <b-row>
-            <b-col md="3" cols="6" v-for="(item, id) in skill_web_data" :key="id">
-              <skill :svg="item.svg" :title="item.title" :rank="item.rank" :description="item.description" />
+            <b-col md="3" class="flex">
+              <img src="@/assets/img/jpg/oj-icon.jpg" alt="icon" id="icon">
+            </b-col>
+            <b-col md="9" id="ov">
+              <div class="name">
+                <h2 style="margin-bottom: 0; font-weight: 700;">大岩 潤矢 (Junya Oiwa)</h2>
+                <p style="color: #777; font-weight: 700;">a.k.a. OJ(おーじぇい)</p>
+              </div>
+              <div class="description">
+                <p>1999/9/20生まれ。20歳。愛知県出身、現在横浜市在住。</p>
+                <p>東京都市大学 メディア情報学部 社会メディア学科 2年生。</p>
+                <p>大学入学と共にプログラミングを始め、JavascriptとPythonを中心に学習中。</p>
+                <p>「とりあえず手を動かす」をモットーに、どんな現場にも対応できるエンジニアになるべく頑張っています。</p>
+              </div>
+              <div class="sns">
+                <a href="https://twitter.com/920oj" target="_blank"><i class="fab fa-twitter-square fa-fw sns_icon"></i></a>
+                <a href="https://github.com/920oj" target="_blank"><i class="fab fa-github-square fa-fw sns_icon"></i></a>
+                <i class="fas fa-envelope fa-fw sns_icon" v-b-modal.modal-1></i>
+                <b-modal id="modal-1" title="メールアドレス" ok-only ok-title="閉じる">
+                  <p class="my-4">0920oiwa(atmark)gmail.com</p>
+                  <p>お問い合わせは<nuxt-link to="/contact">こちらから</nuxt-link></p>
+                </b-modal>
+              </div>
             </b-col>
           </b-row>
-        </div>
-        <div class="skill_separate">
-          <h3 class="section_title">Skills(Others)</h3>
-          <b-row>
-            <b-col md="3" cols="6" v-for="(item, id) in skill_others_data" :key="id">
-              <skill :svg="item.svg" :title="item.title" :rank="item.rank" :description="item.description" />
-            </b-col>
-          </b-row>
-        </div>
-      </section>
+        </section>
 
-    </b-container>
+        <section class="career">
+          <h3 class="section_title">Career</h3>
+          <b-table striped hover :items="career_data" :fields="career_fields"></b-table>
+        </section>
+        
+        <section class="skills">
+          <div class="skill_separate">
+            <h3 class="section_title">Skills(Web)</h3>
+            <b-row>
+              <b-col md="3" cols="6" v-for="(item, id) in skill_web_data" :key="id">
+                <skill :svg="item.svg" :title="item.title" :rank="item.rank" :description="item.description" />
+              </b-col>
+            </b-row>
+          </div>
+          <div class="skill_separate">
+            <h3 class="section_title">Skills(Others)</h3>
+            <b-row>
+              <b-col md="3" cols="6" v-for="(item, id) in skill_others_data" :key="id">
+                <skill :svg="item.svg" :title="item.title" :rank="item.rank" :description="item.description" />
+              </b-col>
+            </b-row>
+          </div>
+        </section>
+      </b-container>
+    </div>
   </div>
 </template>
 
