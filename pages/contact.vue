@@ -91,7 +91,6 @@ export default {
   },
   methods: {
     submitData() {
-      console.log('あ');
       document.contactForm.submit();
       this.isSubmitted = true;
     }

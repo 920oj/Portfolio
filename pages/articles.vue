@@ -82,7 +82,6 @@ export default {
       return new Promise(function(resolve, reject) {
         self.$axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2F920oj.hatenablog.com%2Frss&api_key=ynvt3q8neusmelwzz2vvfxuxxbo6ygcpnv9jukru&count=100')
         .then(function(response){
-          console.log(response.data.items);
           self.hatenaArticles = response.data.items;
           resolve();
         })
@@ -96,7 +95,6 @@ export default {
       return new Promise(function(resolve, reject){
         self.$axios.get('https://qiita.com/api/v2/items?page=1&per_page=100&query=user%3A920oj')
         .then(function(response){
-          console.log(response.data);
           self.qiitaArticles = response.data;
           resolve();
         })
@@ -122,7 +120,7 @@ a:hover {
   text-align: center;
   display: flex;
   justify-content: center;
-  
+
 }
 #art {
   font-family: 'Noto Sans JP', sans-serif;

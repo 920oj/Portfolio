@@ -16,10 +16,11 @@
 
 <script>
 export default {
-    created() {
-        console.log(this.$route.path);
+    data() {
+        return {
+            
+        }
     }
-    
 }
 </script>
 
