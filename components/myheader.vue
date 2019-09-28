@@ -2,7 +2,7 @@
     <div class="header">
         <b-container>
             <nuxt-link to="/"><img src="/img/logo.png" alt="logo" id="header_logo"></nuxt-link>
-            <div>
+            <div style="font-size: 0.8rem;">
                 <b-nav tabs justified>
                     <b-nav-item to="/about" exact exact-active-class="active">About</b-nav-item>
                     <b-nav-item to="/works" exact exact-active-class="active">Works</b-nav-item>
