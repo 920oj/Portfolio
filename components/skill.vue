@@ -45,11 +45,11 @@ export default {
 }
 
 .img_box{
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 .skill_logo {
