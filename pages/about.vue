@@ -7,7 +7,9 @@
           <h3 class="section_title">About me</h3>
           <b-row>
             <b-col md="3" class="flex">
-              <img src="@/assets/img/jpg/oj-icon.jpg" alt="icon" id="icon">
+              <div class="sp_icon">
+                <img src="@/assets/img/jpg/oj-icon.jpg" alt="icon" id="icon">
+              </div>
             </b-col>
             <b-col md="9" id="ov">
               <div class="name">
@@ -118,8 +120,12 @@ section {
 }
 
 @media screen and (max-width: 767px){
-  #icon {
+  .sp_icon {
     width: 70%;
+    height: auto;
+  }
+  #icon {
+    width: 100%;
     text-align: center;
     margin-bottom: 30px;
   }

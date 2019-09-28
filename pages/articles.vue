@@ -11,8 +11,10 @@
             <b-card>
               <b-media no-body>
                 <b-media-aside>
-                  <hatenaLogo style="width: 50px;" v-if="item.site === `hatena`" />
-                  <img src="@/assets/img/png/qiita-square.png" style="width: 50px;" v-if="item.site === `qiita`">
+                  <div style="width: 50px; height: 50px;">
+                    <hatenaLogo style="width: 100%;" v-if="item.site === `hatena`" />
+                    <img src="@/assets/img/png/qiita-square.png" style="width: 100%;" v-if="item.site === `qiita`">
+                  </div>
                 </b-media-aside>
                 <b-media-body class="ml-3">
                   <h5 class="mt-0">{{item.title}}</h5>

@@ -4,7 +4,7 @@
     <div class="con animated fadeIn">
       <b-container>
         <h2 id="contact_title">お問い合わせ</h2>
-        <form v-if="!isSubmitted" name="contactForm" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdU_6pnmkvOTKFCGzhvH8ooZrub5SW_shrXMXJ4zfktjf6KyA/formResponse" method="POST" target="none">
+        <form v-if="!isSubmitted" name="contactForm" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdU_6pnmkvOTKFCGzhvH8ooZrub5SW_shrXMXJ4zfktjf6KyA/formResponse" method="POST">
           <div class="field">
             <p class="field_label">お名前</p>
             <b-form-input type="text" rules="required" v-model="form_name" name="entry.1158105261" fieldname="お名前"></b-form-input>
@@ -29,7 +29,7 @@
             <p v-if="invaild">すべて必須項目です。入力し終えると送信ボタンが有効化されます。</p>
           </div>
         </form>
-        <iframe name="none" frameborder="0" style="display: none;"></iframe>
+        <iframe name="hiddenIframe" frameborder="0" style="display: none;"></iframe>
         <div v-if="isSubmitted" class="animated fadeIn" style="margin-top: 30px;">
           <p>お問い合わせありがとうございました。確認次第、メールアドレス宛にご返信させていただきます。</p>
           <p>一週間経っても返信がない場合、もう一度お問い合わせをご送信いただくか、<a href="https://twitter.com/920oj" target="_blank">Twitter</a>までご連絡ください。</p>
