@@ -1,6 +1,8 @@
-# oj-portfolio
+# Portfolio
 
-> My portfolio website
+自分のポートフォリオサイトです。
+
+https://920oj.net/
 
 ## Build Setup
 
