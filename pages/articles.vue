@@ -82,7 +82,7 @@ export default {
     getHatena() {
       const self = this;
       return new Promise(function(resolve, reject) {
-        self.$axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2F920oj.hatenablog.com%2Frss&api_key=ynvt3q8neusmelwzz2vvfxuxxbo6ygcpnv9jukru&count=100')
+        self.$axios.get(`https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2F920oj.hatenablog.com%2Frss&api_key=${process.env.RSS_KEY}&count=100`)
         .then(function(response){
           self.hatenaArticles = response.data.items;
           resolve();

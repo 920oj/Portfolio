@@ -1,3 +1,5 @@
+require('dotenv').config();
+const { CMS_URL, CMS_API_KEY, RSS_KEY} = process.env;
 
 export default {
   mode: 'spa',
@@ -76,4 +78,9 @@ export default {
     extend (config, ctx) {
     }
   },
+  env: {
+    CMS_URL,
+    CMS_API_KEY,
+    RSS_KEY
+  }
 }
